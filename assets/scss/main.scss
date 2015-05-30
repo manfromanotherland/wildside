@@ -1,0 +1,336 @@
+//
+// WILDSIDE
+// Code, design and content by Edmundo Santos
+
+
+@import "libs/bourbon/bourbon";
+@import "settings";
+@import "mixins";
+@import "header";
+@import "footer";
+
+
+
+//
+// Defaults
+// ----------------------------------------------------------------------------
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+// Remove the gap between the following
+// elements and the bottom of their containers
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+// Responsive images
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+// Remove iOS default styles on form elements
+
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+textarea {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+// Allow only vertical resizing of textareas
+
+textarea {
+	resize: vertical;
+}
+
+// Remove default margin from figure
+
+figure {
+	margin: 0;
+}
+
+// Default link styling
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+
+
+//
+// Helper Classes
+// ----------------------------------------------------------------------------
+
+// Clearfix
+
+.clearfix {
+
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+// Image replacement
+
+.ir {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+
+
+
+//
+// Typography
+// ----------------------------------------------------------------------------
+
+body {
+	font: 1.25em/1.5 $font-family-text;
+	color: $base-color;
+	background:
+		url(../img/bg_header.jpg) top center / 100% no-repeat,
+		linear-gradient(#19181D 1440px, #44424F);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	@include respond-to(big) {
+		background-size: 1000px;
+	}
+
+	@include respond-to(medium) {
+		font-size: 1.125em;
+		background-size: 800px;
+	}
+
+	@include respond-to(small) {
+		background-size: 900px;
+	}
+}
+
+@include selection {
+	text-shadow: none;
+	color: #fff;
+	background-color: $accent-color;
+}
+
+
+// Headlines
+// ----------------------------------------------
+
+h1,
+h2,
+h3,
+h4 {
+	margin-bottom: 0;
+	font-family: $font-family-display;
+	line-height: 1.1;
+	color: #19181D;
+}
+
+h1 {
+	font-size: 2.7em;
+
+	@include respond-to(medium) {
+		font-size: 2.4em;
+	}
+
+	@include respond-to(small) {
+		font-size: 2em;
+	}
+
+	@include respond-to(tiny) {
+		font-size: 1.7em;
+	}
+}
+
+h2 {
+	font-size: 2.1em;
+
+	@include respond-to(small) {
+		font-size: 1.7em;
+	}
+}
+
+h3 {
+	font-size: 1.7em;
+
+	@include respond-to(small) {
+		font-size: 1.3em;
+	}
+}
+
+
+// Post
+// ----------------------------------------------
+
+.post {
+
+	// Side margin on child elements
+
+	h1, h2, h3, h4, > p {
+		margin-left: 14%;
+		margin-right: 14%;
+
+		@include respond-to(big) {
+			margin-left: 8%;
+			margin-right: 8%;
+		}
+
+		@include respond-to(medium) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	// Post title
+
+	&__title {
+		position: relative;
+
+		a {
+			display: block;
+			padding-bottom: .75em;
+			margin-bottom: .75em;
+
+			&::before {
+				@include transition(all $base-duration $ease-in-out-cubic);
+				@include transform-origin(top left);
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100px;
+				height: 4px;
+				background: $accent-color;
+				content: "";
+			}
+
+			&:hover,
+			&:focus {
+				&::before {
+					@include transform(scaleX(2));
+				}
+			}
+		}
+	}
+
+	// Post meta
+
+	&__meta {
+		@include transition(opacity $base-duration);
+		float: left;
+		margin: .5em 0;
+		font-size: .7em;
+		font-style: italic;
+		line-height: 1.45;
+		opacity: .75;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		a {
+			@include transition(color $base-duration);
+
+			&:hover,
+			&:focus {
+				color: $accent-color;
+			}
+		}
+
+		// Post tags
+
+		&__tags {
+			padding: 0;
+			list-style: none;
+
+			@include respond-to(big) {
+				margin: 0 .5em 0 1em;
+
+				li {
+					display: inline-block;
+					margin-right: .5em;
+				}
+			}
+
+			a {
+				display: block;
+			}
+		}
+
+		// Responsive
+
+		@include respond-to(big) {
+			float: none;
+			margin: -.5em auto 0;
+			margin-left: 8%;
+			margin-right: 8%;
+
+			> * {
+				display: inline-block;
+				margin-right: 1em;
+			}
+		}
+
+		@include respond-to(medium) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+
+
+//
+// Layout
+// ----------------------------------------------------------------------------
+
+.container {
+	position: relative;
+	width: 90%;
+	max-width: 1280px;
+	margin: 0 auto;
+
+	@include respond-to(tiny) {
+		width: 100%;
+	}
+}
+
+.main {
+	min-height: 600px;
+	padding: 2em 3em;
+	margin-top: 3em;
+	margin-bottom: 3em;
+	background: #fff;
+	border-radius: 4px;
+
+	@include respond-to(tiny) {
+		padding: 1em 1.5em;
+		margin-top: 2em;
+		margin-bottom: 2em;
+		border-radius: 0;
+	}
+}

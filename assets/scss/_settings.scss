@@ -1,0 +1,26 @@
+//
+// Settings
+// ----------------------------------------------------------------------------
+
+// Colors
+
+$base-color   : #5C5F66;
+$accent-color : #FCC04D;
+
+// Fonts
+
+$font-family-text    : "ff-tisa-web-pro", serif;
+$font-family-display : "proxima-nova", sans-serif;
+
+// Breakpoints
+
+$big    : 1000px;
+$medium : 800px;
+$small  : 600px;
+$tiny   : 400px;
+
+// Transitions time
+
+$base-duration: .3s;
+$slow-duration: .45s;
+$fast-duration: .15s;

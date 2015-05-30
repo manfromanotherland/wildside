@@ -1,0 +1,36 @@
+//
+// Custom Mixins
+// ----------------------------------------------------------------------------
+
+
+// Manage responsive breakpoints
+// ----------------------------------------------
+// .element {
+//     @include respond-to(big)    { // styles }
+//     @include respond-to(medium) { // styles }
+//     @include respond-to(small)  { // styles }
+//     @include respond-to(tiny)   { // styles }
+// }
+
+@mixin respond-to($media) {
+	@if $media == big {
+		@media (max-width: $big) {
+			@content;
+		}
+	}
+	@else if $media == medium {
+		@media (max-width: $medium) {
+			@content;
+		}
+	}
+	@else if $media == small {
+		@media (max-width: $small) {
+			@content;
+		}
+	}
+	@else if $media == tiny {
+		@media (max-width: $tiny) {
+			@content;
+		}
+	}
+}
