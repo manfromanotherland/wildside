@@ -6,29 +6,95 @@
 	position: relative;
 	width: 100%;
 	min-height: 700px;
+	padding-bottom: 4em;
 	text-align: center;
-	background: url(../img/bg_footer.jpg) no-repeat bottom center;
+	color: #f0e7d9;
+	background: url(../img/bg_footer.jpg) no-repeat bottom left / 100%;
+
+	@include respond-to(small) {
+		background-position: -40px 100%;
+		background-size: 200%;
+	}
 }
+
+// Quote
 
 .closing-line {
 	padding: 0 2.5em;
-	margin: 2.5em 10%;
+	margin: 10%;
 	font-size: 1.2em;
 	line-height: 1.45;
 	color: #8c7262;
 
 	@include respond-to(big) {
-		margin: 15% 0 0;
+		margin: 10% 0;
 		font-size: 1.1em;
 	}
 
 	@include respond-to(medium) {
-		margin: 15% 0 0;
 		font-size: 1em;
 	}
 
 	@include respond-to(tiny) {
 		padding: 0 1.5em;
-		margin-top: 20%;
+		margin: 15% 0;
 	}
+}
+
+// Say hello
+
+.say-hello {
+	position: relative;
+	max-width: 800px;
+	padding-top: 10%;
+	margin: 10% auto;
+
+	@include respond-to(tiny) {
+		padding: 15% 1em 0;
+		margin: 15% auto;
+	}
+
+	h4 {
+		margin: 0;
+	}
+
+	a {
+		opacity: .5;
+		transition: opacity $base-duration;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	// Top/bottom lines
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 25%;
+		width: 50%;
+		border-top: 2px dashed rgba(255,255,255,.2);
+		content: "";
+	}
+
+	// Social icons
+
+	.social-icons a {
+		display: inline-block;
+		max-width: 40px;
+		margin: .5em .25em;
+		opacity: 1;
+
+		&:hover {
+			opacity: .5;
+		}
+	}
+}
+
+// By
+
+.by {
+	display: inline-block;
+	max-width: 40px;
 }

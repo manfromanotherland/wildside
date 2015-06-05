@@ -17,6 +17,7 @@ body {
 // Selection
 
 ::selection {
+	text-shadow: none;
 	color: $base-color;
 	background: $accent-color;
 }
@@ -75,6 +76,12 @@ h3 {
 	@include respond-to(small) {
 		font-size: 1.3em;
 	}
+}
+
+h4 {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	color: $accent-color;
 }
 
 
@@ -138,14 +145,19 @@ h3 {
 	// Post meta
 
 	&__meta {
+		clear: both;
 		padding: 1.5em 2em;
 		margin-top: 3em;
-		margin-bottom: 3em;
+		margin-bottom: 2em;
 		font-size: .7em;
 		font-family: $font-family-display;
 		text-transform: uppercase;
 		background: rgba(255,255,255,.25);
 		box-shadow: 0 1px 3px rgba(31,22,21,.1);
+
+		@include respond-to(small) {
+			padding: 1.25em 1.5em;
+		}
 
 		a {
 			position: relative;
@@ -177,6 +189,10 @@ h3 {
 			display: inline-block;
 			vertical-align: top;
 			padding: 0 1em;
+
+			@include respond-to(small) {
+				display: none;
+			}
 		}
 
 		// Post tags
@@ -188,6 +204,13 @@ h3 {
 			margin: 0;
 			list-style: none;
 			white-space: nowrap;
+
+			@include respond-to(small) {
+				display: block;
+				padding: .5em 1.5em;
+				margin: .5em -1.5em;
+				background: rgba(252,192,77,.2);
+			}
 
 			li {
 				display: inline-block;

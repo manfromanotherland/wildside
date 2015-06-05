@@ -78,18 +78,18 @@
 
 .opening-line {
 	padding: 0 2.5em;
-	margin: 15% 10% 0;
+	margin: 15% 10% 10%;
 	font-size: 1.2em;
 	line-height: 1.45;
 	color: #8c7262;
 
 	@include respond-to(big) {
-		margin: 15% 0 0;
+		margin-left: 0;
+		margin-right: 0;
 		font-size: 1.1em;
 	}
 
 	@include respond-to(medium) {
-		margin: 15% 0 0;
 		font-size: 1em;
 	}
 
