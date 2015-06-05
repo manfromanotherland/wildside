@@ -3,5 +3,32 @@
 // ----------------------------------------------------------------------------
 
 .footer {
-	min-height: 600px;
+	position: relative;
+	width: 100%;
+	min-height: 700px;
+	text-align: center;
+	background: url(../img/bg_footer.jpg) no-repeat bottom center;
+}
+
+.closing-line {
+	padding: 0 2.5em;
+	margin: 2.5em 10%;
+	font-size: 1.2em;
+	line-height: 1.45;
+	color: #8c7262;
+
+	@include respond-to(big) {
+		margin: 15% 0 0;
+		font-size: 1.1em;
+	}
+
+	@include respond-to(medium) {
+		margin: 15% 0 0;
+		font-size: 1em;
+	}
+
+	@include respond-to(tiny) {
+		padding: 0 1.5em;
+		margin-top: 20%;
+	}
 }

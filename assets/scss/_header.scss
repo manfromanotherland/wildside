@@ -3,8 +3,8 @@
 // ----------------------------------------------------------------------------
 
 .header {
-	@include user-select(none);
 	text-align: center;
+	user-select: none;
 }
 
 
@@ -12,6 +12,7 @@
 // ----------------------------------------------
 
 .nav {
+	position: relative;
 	margin: 7.8125% 0;
 	font: 700 1.1em/1em $font-family-display;
 	text-transform: uppercase;
@@ -23,20 +24,30 @@
 	// Links
 
 	a {
-		@include transition(color $base-duration);
+		position: relative;
+		overflow: hidden;
 		display: inline-block;
 		vertical-align: middle;
+		white-space: nowrap;
 		padding: .25em .5em;
 		color: $accent-color;
 
-		&:hover,
-		&:focus {
-			color: #fff;
-			outline: none;
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			background: #713f24;
+			content: "";
+			transform: translateX(-110%);
+			transition: all $base-duration;
 		}
 
-		@include respond-to(small) {
-			padding: .75em 1em;
+		&:hover::before,
+		&:focus::before {
+			transform: translateX(0);
 		}
 	}
 
@@ -46,6 +57,10 @@
 		margin: 0 4.6875%;
 		color: #fff;
 
+		&::before {
+			display: none;
+		}
+
 		@include respond-to(medium) {
 			max-width: 200px;
 		}
@@ -53,8 +68,6 @@
 		@include respond-to(small) {
 			display: block;
 			margin: 0 auto;
-			padding-top: 0;
-			padding-bottom: 0;
 		}
 	}
 }
@@ -68,7 +81,7 @@
 	margin: 15% 10% 0;
 	font-size: 1.2em;
 	line-height: 1.45;
-	color: #85878B;
+	color: #8c7262;
 
 	@include respond-to(big) {
 		margin: 15% 0 0;

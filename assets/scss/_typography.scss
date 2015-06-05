@@ -1,0 +1,203 @@
+//
+// Typography
+// ----------------------------------------------------------------------------
+
+body {
+	font: 1.25em/1.5 $font-family-text;
+	color: $base-color;
+	background: #201716;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	@include respond-to(medium) {
+		font-size: 1.125em;
+	}
+}
+
+// Selection
+
+::selection {
+	color: $base-color;
+	background: $accent-color;
+}
+
+// Quotes
+
+blockquote {
+	font-style: italic;
+
+	footer {
+		font-size: .8em;
+		margin-top: .5em;
+		opacity: .5;
+	}
+}
+
+// Headlines
+// ----------------------------------------------
+
+h1,
+h2,
+h3,
+h4 {
+	margin-bottom: 0;
+	font-family: $font-family-display;
+	line-height: 1.1;
+}
+
+h1 {
+	font-size: 2.8em;
+
+	@include respond-to(medium) {
+		font-size: 2.4em;
+	}
+
+	@include respond-to(small) {
+		font-size: 2em;
+	}
+
+	@include respond-to(tiny) {
+		font-size: 1.7em;
+	}
+}
+
+h2 {
+	font-size: 2.1em;
+
+	@include respond-to(small) {
+		font-size: 1.7em;
+	}
+}
+
+h3 {
+	font-size: 1.7em;
+
+	@include respond-to(small) {
+		font-size: 1.3em;
+	}
+}
+
+
+// Post
+// ----------------------------------------------
+
+.post {
+	position: relative;
+	z-index: 2;
+
+	// Side margin on child elements
+
+	> h1,
+	> h2,
+	> h3,
+	> h4,
+	> p,
+	> header,
+	> footer {
+		margin-left: 14%;
+		margin-right: 14%;
+
+		@include respond-to(big) {
+			margin-left: 8%;
+			margin-right: 8%;
+		}
+
+		@include respond-to(medium) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	// Post title
+
+	&__title {
+		position: relative;
+
+		a {
+			display: block;
+			padding-bottom: .75em;
+			margin-bottom: .75em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 35%;
+				border-bottom: 3px dashed #fcc04d;
+				content: "";
+				transition: all $base-duration;
+			}
+
+			&:hover::before {
+				width: 70%;
+				border-bottom: 3px dashed #fcc04d;
+			}
+		}
+	}
+
+	// Post meta
+
+	&__meta {
+		padding: 1.5em 2em;
+		margin-top: 3em;
+		margin-bottom: 3em;
+		font-size: .7em;
+		font-family: $font-family-display;
+		text-transform: uppercase;
+		background: rgba(255,255,255,.25);
+		box-shadow: 0 1px 3px rgba(31,22,21,.1);
+
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			overflow: hidden;
+			transition: all $base-duration;
+
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -1;
+				width: 100%;
+				height: 100%;
+				background: $accent-color;
+				content: "";
+				transform: translateX(-110%);
+				transition: all $base-duration;
+			}
+
+			&:hover::before,
+			&:focus::before {
+				transform: translateX(0);
+			}
+		}
+
+		.spacer {
+			display: inline-block;
+			vertical-align: top;
+			padding: 0 1em;
+		}
+
+		// Post tags
+
+		&__tags {
+			display: inline-block;
+			vertical-align: top;
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			white-space: nowrap;
+
+			li {
+				display: inline-block;
+				vertical-align: top;
+				margin-right: .3em;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

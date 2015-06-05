@@ -18,11 +18,18 @@
 
 <body>
 
+	<!-- Mountain layers -->
+	<div class="bg-layer bg-layer-0"></div>
+	<div class="bg-layer bg-layer-1"></div>
+	<div class="bg-layer bg-layer-2"></div>
+	<div class="bg-layer bg-layer-3"></div>
+
+	<!-- Header -->
 	<header class="header container" role="banner">
 		<nav class="nav" role="navigation">
 			<a href="about">About me</a>
 			<a class="logo" href="./"><img src="assets/img/logo.svg" alt="Wildside"></a>
-			<a href="hello">Say hello</a>
+			<a href="#hello" data-scroll>Say hello</a>
 		</nav>
 		<p class="opening-line">Hey! I’m Edmundo, web designer and weekend wanderer living in lovely Dublin, Ireland. This blog is a photo diary of my adventures.</p>
 	</header>

@@ -3,12 +3,12 @@
 // Code, design and content by Edmundo Santos
 
 
-@import "libs/bourbon/bourbon";
 @import "libs/normalize";
 @import "settings";
 @import "mixins";
 @import "header";
 @import "footer";
+@import "typography";
 
 
 
@@ -21,8 +21,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
 	box-sizing: inherit;
 }
 
@@ -84,13 +84,13 @@ a {
 
 .clearfix {
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		content: "";
 		display: table;
 	}
 
-	&:after {
+	&::after {
 		clear: both;
 	}
 }
@@ -106,206 +106,6 @@ a {
 
 
 //
-// Typography
-// ----------------------------------------------------------------------------
-
-body {
-	font: 1.25em/1.5 $font-family-text;
-	color: $base-color;
-	background:
-		url(../img/bg_header.jpg) top center / 100% no-repeat,
-		linear-gradient(#19181D 1440px, #44424F);
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-
-	@include respond-to(big) {
-		background-size: 1000px;
-	}
-
-	@include respond-to(medium) {
-		font-size: 1.125em;
-		background-size: 800px;
-	}
-
-	@include respond-to(small) {
-		background-size: 900px;
-	}
-}
-
-@include selection {
-	text-shadow: none;
-	color: #fff;
-	background-color: $accent-color;
-}
-
-
-// Headlines
-// ----------------------------------------------
-
-h1,
-h2,
-h3,
-h4 {
-	margin-bottom: 0;
-	font-family: $font-family-display;
-	line-height: 1.1;
-	color: #19181D;
-}
-
-h1 {
-	font-size: 2.7em;
-
-	@include respond-to(medium) {
-		font-size: 2.4em;
-	}
-
-	@include respond-to(small) {
-		font-size: 2em;
-	}
-
-	@include respond-to(tiny) {
-		font-size: 1.7em;
-	}
-}
-
-h2 {
-	font-size: 2.1em;
-
-	@include respond-to(small) {
-		font-size: 1.7em;
-	}
-}
-
-h3 {
-	font-size: 1.7em;
-
-	@include respond-to(small) {
-		font-size: 1.3em;
-	}
-}
-
-
-// Post
-// ----------------------------------------------
-
-.post {
-
-	// Side margin on child elements
-
-	h1, h2, h3, h4, > p {
-		margin-left: 14%;
-		margin-right: 14%;
-
-		@include respond-to(big) {
-			margin-left: 8%;
-			margin-right: 8%;
-		}
-
-		@include respond-to(medium) {
-			margin-left: 0;
-			margin-right: 0;
-		}
-	}
-
-	// Post title
-
-	&__title {
-		position: relative;
-
-		a {
-			display: block;
-			padding-bottom: .75em;
-			margin-bottom: .75em;
-
-			&::before {
-				@include transition(all $base-duration $ease-in-out-cubic);
-				@include transform-origin(top left);
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				width: 100px;
-				height: 4px;
-				background: $accent-color;
-				content: "";
-			}
-
-			&:hover,
-			&:focus {
-				&::before {
-					@include transform(scaleX(2));
-				}
-			}
-		}
-	}
-
-	// Post meta
-
-	&__meta {
-		@include transition(opacity $base-duration);
-		float: left;
-		margin: .5em 0;
-		font-size: .7em;
-		font-style: italic;
-		line-height: 1.45;
-		opacity: .75;
-
-		&:hover {
-			opacity: 1;
-		}
-
-		a {
-			@include transition(color $base-duration);
-
-			&:hover,
-			&:focus {
-				color: $accent-color;
-			}
-		}
-
-		// Post tags
-
-		&__tags {
-			padding: 0;
-			list-style: none;
-
-			@include respond-to(big) {
-				margin: 0 .5em 0 1em;
-
-				li {
-					display: inline-block;
-					margin-right: .5em;
-				}
-			}
-
-			a {
-				display: block;
-			}
-		}
-
-		// Responsive
-
-		@include respond-to(big) {
-			float: none;
-			margin: -.5em auto 0;
-			margin-left: 8%;
-			margin-right: 8%;
-
-			> * {
-				display: inline-block;
-				margin-right: 1em;
-			}
-		}
-
-		@include respond-to(medium) {
-			margin-left: 0;
-			margin-right: 0;
-		}
-	}
-}
-
-
-
-//
 // Layout
 // ----------------------------------------------------------------------------
 
@@ -314,19 +114,72 @@ h3 {
 	width: 90%;
 	max-width: 1280px;
 	margin: 0 auto;
+	backface-visibility: hidden;
 
 	@include respond-to(tiny) {
-		width: 100%;
+		width: 94%;
 	}
 }
 
 .main {
+	$main-color: #f0e7d9;
+	position: relative;
 	min-height: 600px;
-	padding: 2em 3em;
+	padding: 6em 3em;
 	margin-top: 3em;
 	margin-bottom: 3em;
-	background: #fff;
-	border-radius: 4px;
+	background:
+		url(../img/bg_main-dirty.png) no-repeat top right,
+		$main-color url(../img/bg_main.jpg) top center;
+	border-radius: 3px;
+	box-shadow:
+		inset 0 0 0 1px rgba(255,255,255,.25),
+		inset 0 0 25px rgba(31,22,21,.25),
+		// Extra paper sheets
+		4px 4px 20px rgba(31,22,21,.5),
+		4px 4px 0 $main-color,
+		4px 4px 20px rgba(31,22,21,.5),
+		8px 8px 0 $main-color,
+		8px 8px 20px rgba(31,22,21,.5);
+
+	// Border
+
+	&::before {
+		position: absolute;
+		top: 35px;
+		right: 35px;
+		bottom: 35px;
+		left: 35px;
+		border: 5px solid rgba(113,63,36,.13);
+		content: "";
+
+		@include respond-to(medium) {
+			top: 20px;
+			right: 20px;
+			bottom: 20px;
+			left: 20px;
+		}
+
+		@include respond-to(tiny) {
+			top: 10px;
+			right: 10px;
+			bottom: 10px;
+			left: 10px;
+		}
+	}
+
+	// Folded paper
+
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 50%;
+		height: 100%;
+		background: rgba(0,0,0,.035);
+		box-shadow: 0 0 30px rgba(0,0,0,.07);
+		content: "";
+	}
 
 	@include respond-to(tiny) {
 		padding: 1em 1.5em;
@@ -334,4 +187,31 @@ h3 {
 		margin-bottom: 2em;
 		border-radius: 0;
 	}
+}
+
+
+// Parallax layers
+// ----------------------------------------------
+
+.bg-layer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: 100% auto;
+
+	@include respond-to(big)    { background-size: 1000px; }
+	@include respond-to(medium) { background-size: 800px; }
+	@include respond-to(small)  { background-size: 900px; }
+
+	// Mountains and sky layers on top
+
+	&-0 { background-image: url(../img/bg_layer_0.jpg); }
+	&-1 { background-image: url(../img/bg_layer_1.png); }
+	&-2 { background-image: url(../img/bg_layer_2.png); }
+	&-3 { background-image: url(../img/bg_layer_3.png); }
 }
