@@ -9,10 +9,10 @@ function parallaxMountain() {
 	// Multiply the page offset with different values
 	// for different scrolling speeds between layers
 	var offset = [
-		-(scrollVal * 0.3),
-		-(scrollVal * 0.45),
-		-(scrollVal * 0.5),
-		-(scrollVal * 0.65)
+		-(scrollVal * 0.4),
+		-(scrollVal * 0.55),
+		-(scrollVal * 0.6),
+		-(scrollVal * 0.75)
 	];
 
 	// Parallax the shit out of those mountains!
@@ -28,11 +28,12 @@ function parallaxMountain() {
 	openingLine.style.opacity = 1-(scrollVal/90);
 
 	// Fade out / scroll down navigation
-	nav.style.webkitTransform = 'translate3d(0, ' + (scrollVal/1.5) + 'px, 0)';
-	nav.style.MozTransform = 'translate3d(0, ' + (scrollVal/1.5) + 'px, 0)';
-	nav.style.msTransform = 'translateY(' + (scrollVal/1.5) + 'px)';
-	nav.style.OTransform = 'translate3d(0, ' + (scrollVal/1.5) + 'px, 0)';
-	nav.style.transform = 'translate3d(0, ' + (scrollVal/1.5) + 'px, 0)';
+	// nav.style.webkitTransform = 'translate3d(0, ' + (scrollVal/1.5) + 'px, 0)';
+	// nav.style.MozTransform = 'translate3d(0, ' + (scrollVal/1.5) + 'px, 0)';
+	// nav.style.msTransform = 'translateY(' + (scrollVal/1.5) + 'px)';
+	// nav.style.OTransform = 'translate3d(0, ' + (scrollVal/1.5) + 'px, 0)';
+	// nav.style.transform = 'translate3d(0, ' + (scrollVal/1.5) + 'px, 0)';
+	// nav.style.opacity = 1-(scrollVal/200);
 
 }
 
