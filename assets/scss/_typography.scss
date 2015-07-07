@@ -130,14 +130,13 @@ h4 {
 				left: 0;
 				bottom: 0;
 				width: 35%;
-				border-bottom: 3px dashed #fcc04d;
+				border-bottom: 3px dashed $accent-color;
 				content: "";
 				transition: all $base-duration;
 			}
 
 			&:hover::before {
-				width: 70%;
-				border-bottom: 3px dashed #fcc04d;
+				border-bottom-color: darken($accent-color, 25%);
 			}
 		}
 	}

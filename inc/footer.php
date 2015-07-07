@@ -8,7 +8,7 @@
 			</blockquote>
 			<div class="say-hello" id="hello">
 				<h4>Say Hello</h4>
-				<p>I’d love to hear what you think about my blog, drop me a line on <a href="http://twitter.com/edmundojr_">Twitter</a> or <a href="mailto:hello@edmundojr.com">email me</a>. Stay tuned by subscribing on the <a href="">blog’s feed</a> or by following me on <a href="http://instagram.com/edmundojr_">Instagram</a>, where I'll be sharing new adventures. Hope to hear from you!</p>
+				<p>I’d love to hear what you think about my blog, drop me a line on <a href="http://twitter.com/edmundojr_">Twitter</a> or <a href="mailto:hello@edmundojr.com">email me</a>. Stay tuned by subscribing on the <a href="">blog’s feed</a> or by following me on <a href="http://instagram.com/edmundojr_">Instagram</a>, where I'll be sharing new adventures and stories. Hope to hear from you!</p>
 				<p class="social-icons">
 					<a href="http://facebook.com/edmundojr" title="Facebook">
 						<img src="assets/img/icn_facebook.svg" alt="Facebook">
