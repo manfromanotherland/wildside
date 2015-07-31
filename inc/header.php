@@ -31,5 +31,5 @@
 			<a class="logo" href="./"><img src="assets/img/logo.svg" alt="Wildside"></a>
 			<a href="#hello" data-scroll>Say hello</a>
 		</nav>
-		<p class="opening-line">Hey! I’m Edmundo, web designer and weekend wanderer living in lovely Dublin, Ireland. This blog is a diary with my stories and adventures.</p>
+		<p class="opening-line">Hi! I’m Edmundo, web designer and weekend wanderer living in lovely Dublin, Ireland. This blog is a diary with my stories and adventures.</p>
 	</header>
