@@ -28,12 +28,12 @@ function parallaxMountain() {
 	openingLine.style.opacity = 1-(scrollVal/90);
 
 	// Fade out / scroll down navigation
-	// nav.style.webkitTransform = 'translate3d(0, ' + (scrollVal/1.5) + 'px, 0)';
-	// nav.style.MozTransform = 'translate3d(0, ' + (scrollVal/1.5) + 'px, 0)';
-	// nav.style.msTransform = 'translateY(' + (scrollVal/1.5) + 'px)';
-	// nav.style.OTransform = 'translate3d(0, ' + (scrollVal/1.5) + 'px, 0)';
-	// nav.style.transform = 'translate3d(0, ' + (scrollVal/1.5) + 'px, 0)';
-	// nav.style.opacity = 1-(scrollVal/200);
+	nav.style.webkitTransform = 'translate3d(0, ' + (scrollVal * 0.4) + 'px, 0)';
+	nav.style.MozTransform = 'translate3d(0, ' + (scrollVal * 0.4) + 'px, 0)';
+	nav.style.msTransform = 'translateY(' + (scrollVal * 0.4) + 'px)';
+	nav.style.OTransform = 'translate3d(0, ' + (scrollVal * 0.4) + 'px, 0)';
+	nav.style.transform = 'translate3d(0, ' + (scrollVal * 0.4) + 'px, 0)';
+	nav.style.opacity = 1-(scrollVal/200);
 
 }
 
