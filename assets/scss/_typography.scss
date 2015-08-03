@@ -34,6 +34,7 @@ blockquote {
 	}
 }
 
+
 // Headlines
 // ----------------------------------------------
 
@@ -221,5 +222,25 @@ h4 {
 				}
 			}
 		}
+	}
+}
+
+// Post pics
+
+.pic {
+	margin: 1.5em auto;
+
+	a {
+		display: block;
+		padding: .75em;
+	}
+
+	img {
+		border-radius: 4px;
+	}
+
+	.col-1-2 {
+		float: left;
+		width: 50%;
 	}
 }
