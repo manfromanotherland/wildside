@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<article class="post">
+
+	<header>
+		<h1 class="post__title">
+			<a href="{{ page.url }}">{{ page.title }}</a>
+		</h1>
+	</header>
+
+	{{ content }}
+
+	<footer class="post__meta">
+		<time class="post__meta__date" datetime="{{page.date | date: '%Y-%m-%d' }}">{{ page.date | date_to_long_string }}</time>
+		<span class="spacer">·</span>
+		<!-- <ul class="post__meta__tags">
+			{% for tag in page.tags %}
+			<li><a href="/blog/{{ tag_dir }}tag/{{ tag }}">{{ tag }}</a>,</li>
+			{% endfor %}
+		</ul>
+		<span class="spacer">·</span> -->
+		<a class="post__meta__comments" href="{{ page.url }}#comment">Leave your comment</a>
+	</footer>
+
+</article>

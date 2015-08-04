@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+{% for post in paginator.posts limit: 5 %}
+<article class="post">
+
+	<header>
+		<h1 class="post__title">
+			<a href="{{site.baseurl}}{{ post.url }}">
+				{{ post.title }}
+			</a>
+		</h1>
+	</header>
+
+	{{ post.content }}
+
+	<footer class="post__meta">
+		<time class="post__meta__date" datetime="{{post.date | date: '%Y-%m-%d' }}">{{ post.date | date_to_long_string }}</time>
+		<span class="spacer">·</span>
+		<ul class="post__meta__tags">
+			{% for category in post.categories %}
+			<li>{{ category }}</li>
+			{% endfor %}
+		</ul>
+		<span class="spacer">·</span>
+		<a class="post__meta__comments" href="{{ post.url }}#comment">Leave your comment</a>
+	</footer>
+
+</article>
+{% endfor %}
+
+<footer class="pagination">
+	{% if paginator.previous_page %}
+	<a class="pagination__prev" href="{{ paginator.previous_page_path | replace: 'index.html', '/' | prepend: site.baseurl | replace: '//', '/' }}">‹ Previous</a>
+	{% else %}
+	<span class="pagination__prev">‹ Previous</span>
+	{% endif %}
+	<!-- <span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span> -->
+	{% if paginator.next_page %}
+	<a href="{{ paginator.next_page_path | replace: 'index.html', '/' | prepend: site.baseurl | replace: '//', '/' }}" class="pagination__next">Next ›</a>
+	{% else %}
+	<span class="pagination__next">Next ›</span>
+	{% endif %}
+</footer>

@@ -217,8 +217,17 @@ h4 {
 				vertical-align: top;
 				margin-right: .3em;
 
+				&::after {
+					display: inline-block;
+					content: ",";
+				}
+
 				&:last-child {
 					margin-right: 0;
+
+					&::after {
+						display: none;
+					}
 				}
 			}
 		}
@@ -242,5 +251,64 @@ h4 {
 	.col-1-2 {
 		float: left;
 		width: 50%;
+	}
+}
+
+
+// Page navigation
+// ----------------------------------------------
+
+.pagination {
+	overflow: hidden;
+	margin: 3em 14%;
+	font: bold .8em/1.5em $font-family-display;
+	text-transform: uppercase;
+
+	@include respond-to(big) {
+		margin: 2em 8%;
+	}
+
+	@include respond-to(medium) {
+		margin: 1em 0;
+	}
+
+	// Links
+
+	&__prev {
+		float: left;
+	}
+
+	&__next {
+		float: right;
+	}
+
+	a {
+		position: relative;
+		overflow: hidden;
+		transition: all $base-duration;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			background: $accent-color;
+			content: "";
+			transform: translateX(-110%);
+			transition: all $base-duration;
+		}
+
+		&:hover::before,
+		&:focus::before {
+			transform: translateX(0);
+		}
+	}
+
+	// Disabled links
+
+	span {
+		opacity: .5;
 	}
 }

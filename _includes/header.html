@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>{% if page.title %}{{ page.title }} / {% endif %}{{ site.title }}</title>
+
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+	<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+	{% if page.title %}
+	<meta property="og:title" content="{{ page.title }}">
+	<meta property="twitter:title" content="{{ page.title }}">
+	{% endif %}
+
+	<meta name="author" content="{{ site.author.name }}">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="canonical" href="{{ page.url | replace:'/index.html','' | prepend: site.url }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml">
+
+	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+
+	<script src="//use.typekit.net/uhw0aay.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+
+</head>
+
+<body>
+
+	<!-- Mountain layers -->
+	<div class="bg-layer bg-layer-0"></div>
+	<div class="bg-layer bg-layer-1"></div>
+	<div class="bg-layer bg-layer-2"></div>
+	<div class="bg-layer bg-layer-3"></div>
+
+	<!-- Header -->
+	<header class="header container" role="banner">
+		<nav class="nav" role="navigation">
+			<a href="{{ site.baseurl }}/about">About me</a>
+			<a class="logo" href="{{ site.baseurl }}/">
+				<img src="{{ site.baseurl }}/assets/img/logo.svg" alt="{{ site.title }}">
+			</a>
+			<a href="#hello" data-scroll>Say hello</a>
+		</nav>
+		<p class="opening-line">Hi! I’m Edmundo, web designer and weekend wanderer living in lovely Dublin, Ireland. This blog is a diary of my stories and adventures.</p>
+	</header>

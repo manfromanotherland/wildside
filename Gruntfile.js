@@ -1,8 +1,24 @@
+'use strict';
+
 module.exports = function (grunt) {
+
+	// Load all Grunt tasks that are listed in package.json
+	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		// shell commands for use in Grunt tasks
+		shell: {
+			jekyllBuild: {
+				command: 'jekyll build && rsync -vrzc --delete _site/ edmundojr:www/wildside',
+			},
+			jekyllServe: {
+				command: 'jekyll serve',
+			},
+		},
+
+		// sass (libsass) config
 		sass: {
 			dist: {
 				options: {
@@ -10,7 +26,7 @@ module.exports = function (grunt) {
 					sourceMap: true,
 				},
 				files: {
-					'assets/css/main.css': 'assets/scss/main.scss',
+					'_site/assets/css/main.css': 'assets/scss/main.scss',
 				},
 			},
 		},
@@ -20,13 +36,14 @@ module.exports = function (grunt) {
 				processors: require('autoprefixer-core')({browsers: 'last 2 versions'}),
 			},
 			dist: {
-				src: 'assets/css/*.css',
+				src: '_site/assets/css/main.css',
 			},
 		},
 
 		jshint: {
 			options: {
 				reporter: require('jshint-stylish'),
+				node: true,
 			},
 			all: ['Gruntfile.js', 'assets/js/*.js', '!assets/js/*.min.js'],
 		},
@@ -39,34 +56,48 @@ module.exports = function (grunt) {
 			},
 		},
 
+		// watch for files to change and run tasks when they do
 		watch: {
 			livereload: {
+				files: [
+					'_config.yml',
+					'assets/**',
+					'index.html',
+					'about.md',
+					'_layouts/**',
+					'_includes/**',
+					'_posts/**'],
 				options: {
 					livereload: true
 				},
-				files: ['assets/css/*.css', '**/*.php', '**/*.js'],
 			},
-			markup: {
-				files: ['**/*.php'],
-			},
-			css: {
+			styles: {
 				files: ['**/*.scss'],
 				tasks: ['sass', 'postcss'],
 			},
-			scripts: {
-				files: ['**/*.js', '!assets/js/main.min.js'],
+			scrips: {
+				files: ['assets/js/main.js'],
 				tasks: ['jshint', 'uglify'],
+			},
+		},
+
+		// run tasks in parallel
+		concurrent: {
+			serve: ['sass', 'postcss', 'jshint', 'uglify', 'watch', 'shell:jekyllServe'],
+			options: {
+				logConcurrentOutput: true,
 			},
 		},
 
 	});
 
-	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-postcss');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	// Register the grunt serve task
+	grunt.registerTask('serve', ['concurrent:serve']);
 
-	grunt.registerTask('default', ['sass', 'postcss', 'jshint', 'uglify', 'watch']);
+	// Register the grunt build task
+	grunt.registerTask('deploy', ['shell:jekyllBuild', 'sass', 'postcss', 'uglify']);
+
+	// Register build as the default task fallback
+	grunt.registerTask('default', 'build');
 
 };
