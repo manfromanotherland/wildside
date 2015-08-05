@@ -242,11 +242,7 @@ h4 {
 	margin: 1.5em auto;
 
 	@include respond-to(medium) {
-		margin: 1em -.5em;
-	}
-
-	@include respond-to(small) {
-		margin: 1em -.25em;
+		margin: 1em -1.25em;
 	}
 
 	a {
@@ -259,9 +255,9 @@ h4 {
 	}
 
 	img {
-		// padding: .25em;
+		width: 100%;
+		padding: .25em;
 		background: rgba(255,255,255,.5);
-		border: .25em solid rgba(255,255,255,.5);
 		box-shadow: 0 1px 3px rgba(31,22,21,0.1);
 	}
 
