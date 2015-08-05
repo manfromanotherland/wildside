@@ -19,14 +19,13 @@
 
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<link rel="canonical" href="{{ page.url | replace:'/index.html','' | prepend: site.url }}">
-	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml">
-
+	<!-- Stylesheets and favicon -->
 	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
 	<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
 
-	<script src="//use.typekit.net/uhw0aay.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
+	<!-- Canonical and RSS -->
+	<link rel="canonical" href="{{ page.url | replace:'/index.html','' | prepend: site.url }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml">
 
 </head>
 
