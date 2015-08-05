@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 				command: 'jekyll build && rsync -vrzc --delete _site/ edmundojr:www/wildside',
 			},
 			jekyllServe: {
-				command: 'jekyll serve',
+				command: 'jekyll serve --baseurl ""',
 			},
 		},
 
