@@ -3,12 +3,19 @@
 // Code, design and content by Edmundo Santos
 // ----------------------------------------------------------------------------
 
+// Normalize
 @import "libs/normalize";
+
+// Site's stylesheets
 @import "settings";
 @import "mixins";
 @import "header";
 @import "footer";
 @import "typography";
+
+// PhotoSwipe
+@import "libs/photoswipe";
+@import "libs/default-skin";
 
 
 

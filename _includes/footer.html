@@ -29,8 +29,10 @@
 	<script src="//use.typekit.net/uhw0aay.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
-	<!-- SmoothScroll and PhotoSwipe -->
+	<!-- SmoothScroll, PhotoSwipe and site's scripts concatenated -->
 	<script async src="{{ site.baseurl }}/assets/js/main.min.js"></script>
+
+	{% include photoswipe.html %}
 
 </body>
 </html>

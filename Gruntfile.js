@@ -51,7 +51,12 @@ module.exports = function (grunt) {
 		uglify: {
 			dist: {
 				files: {
-					'assets/js/main.min.js': ['assets/js/smooth-scroll.min.js', 'assets/js/main.js'],
+					'assets/js/main.min.js': [
+						'assets/js/libs/smooth-scroll.min.js',
+						'assets/js/libs/photoswipe.min.js',
+						'assets/js/libs/photoswipe-ui-default.min.js',
+						'assets/js/main.js'
+					],
 				},
 			},
 		},

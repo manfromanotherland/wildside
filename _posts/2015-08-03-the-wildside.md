@@ -10,22 +10,42 @@ As for me, I've always loved the great outdoors, even though I hadn't had a chan
 
 Laura on the other hand is more of a city-girl. She likes comfort as much as the next city-girl: sleep in a soft bed, take a warm bath and enjoy her meals *preferably* hot. By all means, there's nothing wrong with that, we're just different in this matter.
 
-<figure class="pic">
-	<div class="pic__row">
-		<a href=""><img src="//unsplash.it/1280/800?image=734" alt=""></a>
-	</div>
-	<div class="pic__row">
-		<a class="pic--1-2" href=""><img src="//unsplash.it/600/375?image=730" alt=""></a>
-		<a class="pic--1-2" href=""><img src="//unsplash.it/600/375?image=727" alt=""></a>
-	</div>
-	<div class="pic__row">
-		<a href=""><img src="//unsplash.it/1280/800?image=699" alt=""></a>
-	</div>
-	<div class="pic__row">
-		<a class="pic--1-3" href=""><img src="//unsplash.it/600/375?image=718" alt=""></a>
-		<a class="pic--1-3" href=""><img src="//unsplash.it/600/375?image=716" alt=""></a>
-		<a class="pic--1-3" href=""><img src="//unsplash.it/600/375?image=720" alt=""></a>
-	</div>
+<figure class="gallery clearfix">
+	<figure class="gallery__item">
+		<a href="//unsplash.it/1400/1000?image=734" data-size="1400x1000">
+			<img src="//unsplash.it/800/570?image=734" alt="Image description 1">
+		</a>
+	</figure>
+	<figure class="gallery__item--1-2">
+		<a href="//unsplash.it/1400/1000?image=727" data-size="1400x1000">
+			<img src="//unsplash.it/800/570?image=727" alt="Image description 2">
+		</a>
+	</figure>
+	<figure class="gallery__item--1-2">
+		<a href="//unsplash.it/1400/1000?image=730" data-size="1400x1000">
+			<img src="//unsplash.it/800/570?image=730" alt="Image description 3">
+		</a>
+	</figure>
+	<figure class="gallery__item">
+		<a href="//unsplash.it/1400/1000?image=699" data-size="1400x1000">
+			<img src="//unsplash.it/800/570?image=699" alt="Image description 4">
+		</a>
+	</figure>
+	<figure class="gallery__item--1-3">
+		<a href="//unsplash.it/1400/1000?image=718" data-size="1400x1000">
+			<img src="//unsplash.it/800/570?image=718" alt="Image description 5">
+		</a>
+	</figure>
+	<figure class="gallery__item--1-3">
+		<a href="//unsplash.it/1400/1000?image=716" data-size="1400x1000">
+			<img src="//unsplash.it/800/570?image=716" alt="Image description 6">
+		</a>
+	</figure>
+	<figure class="gallery__item--1-3">
+		<a href="//unsplash.it/1400/1000?image=720" data-size="1400x1000">
+			<img src="//unsplash.it/800/570?image=720" alt="Image description 7">
+		</a>
+	</figure>
 </figure>
 
 So when she told me she wanted go along with me in one of my hikes, I felt surprised, but very content, for is nice to have a partner with you on long hikes – specially someone that *is* your partner. We decided to go on a two day hike to Glendalough, Co. Wicklow.

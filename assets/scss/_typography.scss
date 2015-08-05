@@ -238,50 +238,57 @@ h4 {
 // Post images
 // ----------------------------------------------
 
-.pic {
+.gallery {
 	margin: 1.5em auto;
 
 	@include respond-to(medium) {
 		margin: 1em -1.25em;
 	}
 
-	a {
+	// Gallery item
+
+	&__item {
+		position: relative;
 		float: left;
+		width: 100%;
 		padding: .5em;
 
 		@include respond-to(small) {
 			padding: .25em;
 		}
+
+		// Grid fractions
+
+		&--1-2 {
+			@extend .gallery__item;
+			width: 50%;
+		}
+
+		&--1-3 {
+			@extend .gallery__item;
+			width: 33.333333333%;
+
+			@include respond-to(small) {
+				width: 100%;
+			}
+		}
+	}
+
+	// Gallery
+
+	a {
+		display: block;
+		padding: .25em;
+		background: rgba(255,255,255,.5);
+		border-radius: 2px;
+		box-shadow: 0 1px 3px rgba(31,22,21,0.1);
 	}
 
 	img {
 		width: 100%;
-		padding: .25em;
-		background: rgba(255,255,255,.5);
-		box-shadow: 0 1px 3px rgba(31,22,21,0.1);
-	}
-
-	// Grid row
-
-	&__row {
-		clear: both;
-		overflow: hidden;
-	}
-
-	// Grid fractions
-
-	&--1-2 {
-		width: 50%;
-	}
-
-	&--1-3 {
-		width: 33.333333333%;
-
-		@include respond-to(small) {
-			width: 100%;
-		}
 	}
 }
+
 
 
 // Page navigation
