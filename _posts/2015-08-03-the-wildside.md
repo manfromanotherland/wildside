@@ -65,7 +65,7 @@ Early morning we broke camp and moved on to the Wicklow Way. It was a cool and w
 
 ## Glendalough
 
-Our destination was at hand. After one day walking under rain we arrived in Glendalough – from the Irish *Gleann Dá Loch*, meaning “The Valley of the two lakes”).
+Our destination was at hand. After one day walking under the rain we arrived in Glendalough (from the Irish *Gleann Dá Loch*, meaning “The Valley of the two lakes”). It's an early Medieval monastic settlement founded by St Kevin in the 6th century. Really beautiful place surrounded by mountains, in the heart of Wicklow.
 
 <div class="gallery">
 	{% include image.html file="13" size="1400x875" caption="Glendalough" %}
@@ -74,10 +74,12 @@ Our destination was at hand. After one day walking under rain we arrived in Glen
 	{% include image.html file="15" size="1400x875" grid="1-3" caption="St. Kevin's Church, doorway" %}
 </div>
 
-Sentence about Glendalough. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe veniam soluta excepturi accusamus adipisci, ab praesentium! Delectus quo eos, earum sapiente inventore quisquam aperiam temporibus consequuntur. Impedit veniam ea ad voluptatem, quo eaque provident tenetur voluptatum assumenda laborum, laboriosam, corporis harum. Temporibus totam iure libero aspernatur ad pariatur quo aliquid earum, non ab consectetur, eum quam maxime possimus, modi, minus labore qui quisquam illum at cum saepe culpa optio et voluptas.
+On the way to the Monastery, unexpectedly, we found the Trinity Church. The most westerly of the churches at Glendalough, they say it was built between the 11th and 12th centuries. Two fragmentary Latin crosses and several plain grave slabs are placed near the church.
+
+We arrived at the Monastery and walked through the site, just soaking it all in. Glendalough is a famous tourist destination in Ireland, so the place is filled with hotels, restaurants and pubs – of course!
 
 <div class="gallery">
 	{% include image.html file="16" size="1400x875" caption="The ruins of St. Kevin's Church with the Glendalough Tower on the background." %}
 </div>
 
-Closing. Nulla illo cum harum tenetur veritatis repudiandae molestiae vero, atque enim minus recusandae nam earum provident eveniet est accusamus impedit officiis, asperiores.
+That was the end of our journey, we were immensely tired but pleased to have walked those two days, it sure was worth it. I hope you guys like our little adventure, and if you're visiting Ireland, we highly recommend walking the Wicklow Mountains Way, at least until Glendalough.
