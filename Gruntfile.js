@@ -61,6 +61,17 @@ module.exports = function (grunt) {
 			},
 		},
 
+		imagemin: {
+			dynamic: {
+				files: [{
+					expand: true,
+					cwd: 'images/',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'images/'
+				}],
+			},
+		},
+
 		// watch for files to change and run tasks when they do
 		watch: {
 			livereload: {
@@ -100,7 +111,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('serve', ['concurrent:serve']);
 
 	// Register the grunt build task
-	grunt.registerTask('deploy', ['sass', 'postcss', 'uglify', 'shell:jekyllBuild']);
+	grunt.registerTask('deploy', ['sass', 'postcss', 'uglify', 'imagemin', 'shell:jekyllBuild']);
 
 	// Register build as the default task fallback
 	grunt.registerTask('default', 'build');

@@ -1,0 +1,6 @@
+<figure class="gallery__item{% if include.grid %}--{{ include.grid }}{% endif %}">
+	<a href="{{ site.baseurl }}/images{{ page.url }}{{ include.file }}-big.jpg" data-size="{{ include.size }}">
+		<img src="{{ site.baseurl }}/images{{ page.url }}{{ include.file }}.jpg" alt="{{ page.title }}">
+	</a>
+	{% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>
