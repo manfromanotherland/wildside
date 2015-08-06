@@ -24,3 +24,7 @@ $tiny   : 400px;
 $base-duration: .3s;
 $slow-duration: .45s;
 $fast-duration: .15s;
+
+// Transition easing
+
+$timing-elastic: cubic-bezier(0.175,.885,.32,1.275);

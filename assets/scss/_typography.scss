@@ -272,23 +272,57 @@ h4 {
 				width: 100%;
 			}
 		}
+
+		// Show caption just on zoom
+
+		figcaption {
+			display: none;
+		}
 	}
 
-	// Gallery
+	// Gallery link
 
 	a {
+		position: relative;
 		display: block;
 		padding: .25em;
 		background: rgba(255,255,255,.5);
-		border-radius: 2px;
+		border-radius: 4px;
 		box-shadow: 0 1px 3px rgba(31,22,21,0.1);
+		transition: all $base-duration ease-in-out;
+
+		&:hover {
+			background: #fff;
+			transform: translateY(-2px);
+			box-shadow: 0 3px 6px rgba(31,22,21,0.2);
+		}
 	}
 
 	img {
 		width: 100%;
+		border-radius: 3px;
 	}
 }
 
+
+// PhotoSwipe modifications
+// ----------------------------------------------
+
+// Counter & Caption
+
+.pswp__counter,
+.pswp__caption__center {
+	font-family: $font-family-display;
+	font-weight: bold;
+}
+
+.pswp__counter {
+	font-size: .6em !important;
+}
+
+.pswp__caption__center {
+	font-size: .8em !important;
+}
 
 
 // Page navigation
