@@ -6,7 +6,7 @@ layout: default
 
 	<header>
 		<h1 class="post__title">
-			<a href="{{ page.url }}">{{ page.title }}</a>
+			<a href="{{site.baseurl}}{{ post.url }}">{{ page.title }}</a>
 		</h1>
 	</header>
 
@@ -21,7 +21,7 @@ layout: default
 			{% endfor %}
 		</ul>
 		<span class="spacer">·</span>
-		<a class="post__meta__comments" href="{{ page.url }}#comment">Leave your comment</a>
+		<a class="post__meta__comments" href="{{site.baseurl}}{{ post.url }}#comment">Leave your comment</a>
 	</footer>
 
 </article>
