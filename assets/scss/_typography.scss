@@ -386,3 +386,24 @@ h4 {
 		opacity: .5;
 	}
 }
+
+
+// Disqus Comments
+// ----------------------------------------------
+
+.comments {
+	position: relative;
+	z-index: 2;
+	padding: 1em 1.5em;
+	margin: 2em 14%;
+	background-color: rgba(255,255,255,0.5);
+	box-shadow: 0 1px 3px rgba(31,22,21,0.1);
+
+	@include respond-to(big) {
+		margin: 2em 8%;
+	}
+
+	@include respond-to(medium) {
+		margin: 1em 0;
+	}
+}
