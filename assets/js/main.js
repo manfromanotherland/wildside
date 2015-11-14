@@ -1,3 +1,4 @@
+// parallaxMountain
 function parallaxMountain() {
 
 	// Variables
@@ -39,7 +40,13 @@ function parallaxMountain() {
 
 // Call parallaxMountain function
 
-document.addEventListener('scroll', parallaxMountain, false);
+var scrollVal = Math.max(window.pageYOffset,0);
+
+if (scrollVal < 400) {
+	document.addEventListener('scroll', parallaxMountain, false);
+} else {
+	document.removeEventListener('scroll', parallaxMountain, true);
+}
 
 // Call smoothScroll (Say Hello anchor)
 
