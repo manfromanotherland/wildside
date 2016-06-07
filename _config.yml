@@ -1,12 +1,17 @@
 # Setup
 
 title:            'Wildside'
-description:      'Hi! I’m Edmundo, web designer and weekend wanderer living in lovely Dublin, Ireland. This blog is a diary of my stories and adventures.'
+description:      'Hi! I’m Edmundo, designer, developer, and weekend wanderer living in lovely Dublin, Ireland. This blog is a photo diary of my stories and adventures.'
 
 url:              http://edmundojr.com
 baseurl:          '/wildside'
 
 permalink:        :title/
+
+sass:
+  sass_dir:       assets/styles/
+
+gems:             [jekyll-paginate]
 
 paginate:         5
 paginate_path:    '/wildside/blog/page:num/'
@@ -23,10 +28,3 @@ author:
 analytics:        1068613-21
 
 disqus:           edwildside
-
-# Dependencies
-
-markdown:         redcarpet
-
-exclude:          ['Gruntfile.js', 'package.json', 'node_modules', 'assets/scss']
-keep_files:       ['_site/assets/css']
