@@ -11,6 +11,8 @@ permalink:        :title/
 sass:
   sass_dir:       assets/scss/
 
+gems:             [jekyll-paginate]
+
 paginate:         5
 paginate_path:    '/wildside/blog/page:num/'
 
