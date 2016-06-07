@@ -9,7 +9,7 @@ baseurl:          '/wildside'
 permalink:        :title/
 
 sass:
-  sass_dir:       assets/scss/
+  sass_dir:       assets/styles/
 
 gems:             [jekyll-paginate]
 
